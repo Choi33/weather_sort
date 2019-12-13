@@ -1,6 +1,5 @@
 # 수능 날씨 분류
 
-<br>
 ><a href="https://www.ytn.co.kr/_ln/0108_201911131343347274">[날씨] 요란한 비에 첫눈까지... 내일 수능 추위에 황사 </a>
 >
 ><a href="http://www.kyeonggi.com/news/articleView.html?idxno=2195622">수능 한파 찾아온다... 오늘 밤 부터 경기 일부지역·인천 한파 주위보</a>
