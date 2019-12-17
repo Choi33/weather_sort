@@ -65,6 +65,9 @@ plt.xticks(index,label,fontsize=16)
 plt.legend((jeju_bar[0],seogwipo_bar[0]),('기온상승','기온하락'),fontsize=14)
 plt.show()
 
+plt.figure(figsize=(12,6))
+sns.heatmap(data=data.corr(), annot=True, cmap='cubehelix_r')
+plt.show()
 
 
 
