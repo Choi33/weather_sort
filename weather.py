@@ -130,7 +130,3 @@ plt.figure(figsize=(12,6))
 sns.heatmap(data=data.corr(), annot=True, cmap='cubehelix_r')
 plt.show()
 
-
-
-
-# data.corr()['최저기온'].sort_values() #히트맵에서의 상관관계파악
