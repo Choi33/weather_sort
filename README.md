@@ -185,11 +185,11 @@ plt.legend((sun_bar1[0], sun_bar2[0]),('상승','하락'),fontsize=14)
 plt.show()
 ```
 
-<img src="image/기온차이.png">
+![기온차이.PNG](./image/기온차이.PNG)
 
-<img src="image/풍속차이.png">
+![풍속차이.PNG](./image/풍속차이.PNG)
 
-<img src="image/일조시간.png">
+![일조시간.PNG](./image/일조시간.PNG)
 
 :snowflake:11년동안 총 5번의 기온 상승과 6번의 기온 하락이 있었다. 기온차이는 크게 차이를 보이지 않았지만 풍속과 일조시간은 차이를 많이 보였다. `일조시간 같은 경우 0값이 있어 0값은 빼고 카운트했다.`<br>
 
@@ -205,7 +205,7 @@ plt.show()
 
 :snowflake: 히트맵 출력결과는 다음과 같다<br>
 
-<img src="image/heatmap.png">
+![heatmap.PNG](./image/heatmap.PNG)
 
 :snowflake:평균기온에서 온도차이가 나왔고 합계 일조시간에서 일조시간 차이가 나왔기 때문에 둘은 연관성을 보이고 있지만 나머지 컬럼들과의 연관성은 적은 것으로 나타났다.<br>
 
@@ -223,7 +223,7 @@ plt.show()
 
 :snowman: 하지만 풍속을 분류하면서 꽤 차이점을 찾을 수 있었다.  온도가 높아도 풍속이 수능 전날에 비해 높은 날이 있었다. 반대로 온도는 전날에 비해 낮았지만 풍속은 전날에 비해 낮은 경우도 있었다. <br>
 
-<img src="image/e.png">
+![e.PNG](./image/e.PNG)
 
 `첫번째 밑줄 같은 경우 수능 당일의 기온이 높았지만 풍속은 수능 당일이 강했다. `<br>
 
