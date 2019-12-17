@@ -29,41 +29,43 @@ plt.rcParams["figure.figsize"] = (14,4)
 data['지역'].astype(str)
 
 # 수능 날 기온을 그래프상에서 점을 찍어 표시
-sns.relplot(data=data, x="날짜", y="최저기온", hue="지역")
+sns.pointplot(data=data, x="날짜", y="평균기온", hue="지역")
 plt.xlabel('날짜')
-plt.ylabel('최저기온')
+plt.ylabel('평균기온')
 plt.title('수능날 기온',fontsize=15)
 plt.show()
 
 jeju_minus=0; #제주시 기준 수능 전 날보다 추운 날
 jeju_plus=0; #제주시 기준 수능 전 날보다 따뜻한 날
 for b in range(len(jeju_index)):
-    if(data['차이'].iloc[b]>0):
+    if(data['온도차이'].iloc[b]>0):
         jeju_plus= jeju_plus + 1
-    if(data['차이'].iloc[b]<0):
+    if(data['온도차이'].iloc[b]<0):
         jeju_minus= jeju_minus + 1
 
 seogwipo_minus=0 #서귀포시 기준 수능 전 날보다 추운 날
 seogwipo_plus=0; #서귀포시 기준 수능 전 날 보다 따뜻한 날
 for c in range(len(seogwipo_index)):
-    if(data['차이'].iloc[c]>0):
+    if(data['온도차이'].iloc[c]>0):
         seogwipo_plus= seogwipo_plus + 1
-    if(data['차이'].iloc[c]<0):
+    if(data['온도차이'].iloc[c]<0):
         seogwipo_minus= seogwipo_minus + 1
 
-'''
-print("제주시를 기준으로 수능 전날 보다 기온이 높은 날은 총 ",jeju_plus,"일 이다.")
-print("제주시를 기준으로 수능 전날 보다 기온이 낮은 날은 총 ",jeju_minus,"일 이다.")
 
-print("서귀포시를 기준으로 수능 전날 보다 기온이 높은 날은 총 ",seogwipo_plus,"일 이다.")
-print("서귀포시를 기준으로 수능 전날 보다 기온이 낮은 날은 총 ",seogwipo_minus,"일 이다.")
-'''
+bar_width=0.3
+ypoint1=[jeju_plus,seogwipo_plus]
+ypoint2=[jeju_minus,seogwipo_minus]
+N=len(data['지역'].unique())
+index = np.arange(N)
 
-# 2019년 부터 2009년까지 기온이 상승한 날의 수와 기온이 하락한 날의 수를 막대 그래프로 표현
-ypoint=[jeju_minus,jeju_plus, seogwipo_minus, seogwipo_plus]
-xpoint=['제주시 : 기온하락','제주시 : 기온상승', '서귀포시 : 기온하락', '서귀포시 : 기온상승']
-plt.bar(xpoint,ypoint,color='green', alpha=0.7)
+label=['제주시','서귀포시']
+jeju_bar=plt.bar(index, ypoint1,color='b',alpha=0.5,width=0.3)
+seogwipo_bar=plt.bar(index+bar_width,ypoint2,color='r',alpha=0.5,width=0.3)
+plt.xticks(index,label,fontsize=16)
+plt.legend((jeju_bar[0],seogwipo_bar[0]),('기온상승','기온하락'),fontsize=14)
 plt.show()
+
+
 
 
 
